@@ -1,0 +1,174 @@
+@charset "utf-8";
+/* CSS Document */
+
+#ggshort-project-summary-title {
+font-size: 18px;
+padding-top: 10px;
+padding-bottom: 5px;
+}
+
+#ggshort-project-need-title {
+font-size: 18px;
+padding-top: 10px;
+padding-bottom: 5px;
+}
+
+#ggshort-project-activity-title {
+font-size: 18px;
+padding-top: 10px;
+padding-bottom: 5px;
+}
+
+#ggshort-project-longtermimpact-title {
+font-size: 18px;
+padding-top: 10px;
+padding-bottom: 5px;
+}
+
+#ggshort-project-longtermimpact {
+padding-bottom: 20px;
+}
+
+#ggshort-project-funding-title {
+font-size: 16px;
+}
+
+#ggshort-project-remaining-title {
+font-size: 16px;
+}
+
+#ggshort-project-goal-title {
+font-size: 16px;
+}
+
+#ggshort-report-title {
+font-size: 18px;
+}
+
+#ggshort-report-author-title {
+font-size: 14px;
+}
+
+#ggshort-report-pubdate-title {
+font-size: 14px;
+}
+
+#ggshort-report-content-title {
+font-size: 18px;
+display: none;
+}
+
+#ggshort-report-seemore-title {
+font-size: 18px;
+}
+
+#ggshort-report-seemore {
+	clear: both;
+}
+
+#ggshort-project-title {
+text-transform: capitalize;
+background-color: #0072ca;
+color: white;
+font-size: 34px;
+padding: 10px 0 10px 10px;
+}
+
+#ggshort-report-div {
+padding: 20px;
+}
+
+#ggshort-projectinfo-div {
+width: 65%;
+float: left;
+}
+
+#ggshort-project-fundingdiv {
+float: right;
+}
+
+#ggshort-report-div {
+clear: both;
+}
+
+#ggshort-report-pubdate-title {
+float: left;
+margin-right: 20px;
+}
+
+#ggshort-report-author-title {
+float: left;
+margin-right: 40px;
+}
+
+#ggshort-widget {
+width: 180px;
+border: 1px solid #e19b2d;
+padding: 0;
+-moz-border-radius: 10px;
+-khtml-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+float: right;
+text-align: center;
+background-color: #FFF;
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+#ggshort-report-div {
+clear: both;
+border-color: #FFFFFF;
+border: 1px solid;
+-moz-border-radius: 10px;
+-khtml-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+}
+
+#ggshort-customwidget {
+width: 180px;
+border: 1px solid #fff;
+padding: 0;
+-moz-border-radius: 10px;
+-khtml-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+float: right;
+text-align: center;
+background-color: #FFF;
+margin-top: 10px;
+margin-bottom: 10px;
+color: #000;
+}
+
+#ggshort-widget-title {
+color: #db8600;
+font-weight: bold;
+font-size: 16px;
+margin-top: 5px;
+margin-bottom: 8px;
+}
+
+#ggshort-project-link {
+padding: 5px;
+padding-left: 15px;
+font-size: 14px;
+font-weight: bold;
+}
+
+#ggshort-project-fundingdiv {
+width: 180px;
+border: 1px solid #fff;
+padding: 0;
+-moz-border-radius: 10px;
+-khtml-border-radius: 10px;
+-webkit-border-radius: 10px;
+border-radius: 10px;
+float: right;
+text-align: center;
+background-color: #FFF;
+margin-top: 10px;
+margin-bottom: 10px;
+color: #000;
+}
