@@ -1,4 +1,12 @@
 <?php
+//Object to array
+function objectToArray($d) {
+    if (is_object($d))
+        $d = get_object_vars($d);
+    return is_array($d) ? array_map(__METHOD__, $d) : $d;
+}
+
+
 //Function for Global Giving Get Contents - Used for caching
 function gg_file_get_contents($url, $use_include_path = false, $context,$pageid,$projectid,$type,$forceupdate = false)
 {
@@ -35,23 +43,19 @@ function gg_file_get_contents($url, $use_include_path = false, $context,$pageid,
 			//echo "<p>No Stored Data</p>";
 		}
 	//Update or Pull from meta
-		if($gg_runupdate == 1) { //Run Update
+		if($gg_runupdate == 1 || $forceupdate == true) { //Run Update
 			$gg_filegetcontentsdata = file_get_contents($url, $use_include_path, $context);
-			$gg_filegetcontentsdata = str_replace("n<p>","<br>",$gg_filegetcontentsdata);
-			$gg_filegetcontentsdata = str_replace("</p>n","<br>",$gg_filegetcontentsdata);
+			$gg_filegetcontentsdata = str_replace( '\\', '\\\\', $gg_filegetcontentsdata );
 			update_post_meta( $pageid, $gg_metaname,time() );
 			update_post_meta( $pageid, $gg_reportname,$gg_filegetcontentsdata );
 			$gg_filegetcontentsdata = get_post_meta( $pageid, $gg_reportname );
 		} else { //Use Metadata
-			$gg_filegetcontentsdata = $gg_metadata;
-			$gg_filegetcontentsdata = str_replace("n<p>","<br>",$gg_filegetcontentsdata);
-			$gg_filegetcontentsdata = str_replace("</p>n","<br>",$gg_filegetcontentsdata);	
+			$gg_filegetcontentsdata = $gg_metadata;			
 		}
 		
-	//file_get_contents($url, $use_include_path, $context)
-	
-	
-	return $gg_filegetcontentsdata;
+		$gg_filegetcontentsdata = json_decode($gg_filegetcontentsdata[0]);
+		$gg_filegetcontentsdata = objectToArray($gg_filegetcontentsdata);
+		return $gg_filegetcontentsdata;
 }
 
 function ggendsWith($haystack, $needle)
@@ -63,7 +67,7 @@ function ggendsWith($haystack, $needle)
 
     return (substr($haystack, -$length) === $needle);
 }
-
+/*
 function gg_project( $atts, $content = null ){
 	
 	//Get passed data
@@ -255,7 +259,7 @@ function gg_project( $atts, $content = null ){
 			}
 		}
 		*/
-		
+		/*
 		$url = "https://api.globalgiving.org/api/public/projectservice/projects/" . $projectid . "/imagegallery?api_key=" . get_option('ggdisplay_apikey');
 		//Image Rest Interface
 		
@@ -320,6 +324,7 @@ function gg_project( $atts, $content = null ){
 		echo "</pre>";
 		echo "<hr>";
 	*/
+	/*
 	//$ggreturn = $ggreturn . "<p> Plugin Path: " . plugins_url();
  //Temp CSS
  	$ggreturn = '<link href="' . plugins_url() . "/global-giving-display".'/ggdefault.css" rel="stylesheet" type="text/css" />' . $ggreturn;	
@@ -327,5 +332,5 @@ function gg_project( $atts, $content = null ){
 return $ggreturn;		
 }
 add_shortcode( 'gg-project', 'gg_project' );
-
+*/
 
